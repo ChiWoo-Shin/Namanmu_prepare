@@ -1,38 +1,193 @@
-.App {
-  text-align: center;
+.container {
+  margin: auto;
+  max-width: 600px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todoBlock {
+  padding: 30px;
+  margin-top: 50px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: -9px 17px 13px rgba(0, 0, 0, 0.16);
+}
+.Video {
+  width: 360px;
+  height: 180px;
+  background: white;
+  border: 3px solid green;
+  object-fit: fill;
+}
+.Video_myturn {
+  width: 360px;
+  height: 180px;
+  background: white;
+  border: 3px solid red;
+  object-fit: fill;
+}
+.Canvas {
+  width: 360px;
+  height: 180px;
+  background: rgba(245, 240, 215, 0.5);
+  border: 3px, solid green;
+}
+.None {
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.wide-frame {
+  position: relative;
+  height: 800px;
+  width: 100%x;
+  background-color: beige;
+  margin: auto;
+  padding: 2%;
   align-items: center;
+}
+.middle-frame {
+  height: 800px;
+  width: 25%;
+  background-color: #ffffff;
+  float: left;
+  margin-left: 2%;
+}
+
+.a-screen {
+  height: 800px;
+  width: 22%;
+  background-color: lightcoral;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.b-screen {
+  height: 800px;
+  width: 22%;
+  float: left;
+  background-color: lightskyblue;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.box {
+  left: 4%;
+  position: relative;
+  width: 40%; /* 원하는 너비 */
+  margin: auto;
+  margin: 3%;
+  float: left;
+}
+
+.box:before {
+  content: "";
+  display: block;
+  padding-top: 50%;
+}
+
+.Score {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: coral;
+  border-radius: 10px;
+  float: left;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.mid-screen {
+  height: 800px;
+  width: 50%;
+  background-color: lightgray;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.video_box {
+  position: relative;
+  width: 77%; /* 원하는 너비 */
+  margin: auto;
+  top: 15%;
+  margin-bottom: 7%;
+}
+
+.video_box:before {
+  content: "";
+  display: block;
+  padding-top: 75%;
+}
+
+.video_frame {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  border-radius: 10px;
+}
+
+.team_box {
+  position: relative;
+  height: 9%; /* 원하는 너비 */
+  margin: auto;
+  margin: 1%;
+  top: 1%;
+}
+.team_box:before {
+  content: "";
+  display: block;
+
+  padding-top: 15%;
+}
+
+.team_turn {
+  background-color: beige;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 13px;
+}
+
+.main_video_box {
+  position: relative;
+  width: 97%; /* 원하는 너비 */
+  margin: auto;
+  top: 2%;
+  margin-bottom: 5%;
+}
+
+.main_video_box:before {
+  content: "";
+  display: block;
+  padding-top: 75%;
+}
+
+.main_video_frame {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  border-radius: 10px;
+}
+
+.Video {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border: 3px solid green;
+}
+.Video_myturn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 3px solid green;
 }
