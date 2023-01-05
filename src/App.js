@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
+import ReactDOM from "react-dom";
 import { Button } from "react-bootstrap";
 import ItemOneBlur from "./item_info/Item_1_blur";
 import ItemTwoDecal from "./item_info/Item_2_decalco";
@@ -115,6 +116,34 @@ function TestOverlay() {
     }
   };
 
+  const renderCam = () => {
+    const clearElement = () => {
+      document.getElementById("my-element").innerHTML = "";
+    };
+    ReactDOM.render(
+      <ItemOneBlur className="Video_myturn" videoRef={videoRef} />,
+      document.getElementById("main_screen")
+    );
+  };
+
+  const renderCam2 = () => {
+    const clearElement = () => {
+      document.getElementById("my-element").innerHTML = "";
+    };
+    ReactDOM.render(
+      <ItemTwoDecal className="Video_myturn" videoRef={videoRef} />,
+      document.getElementById("main_screen")
+    );
+  };
+  const renderCam3 = () => {
+    const clearElement = () => {
+      document.getElementById("my-element").innerHTML = "";
+    };
+    ReactDOM.render(
+      <ItemThreeCut className="Video_myturn" videoRef={videoRef} />,
+      document.getElementById("main_screen")
+    );
+  };
   return (
     <div className="wide-frame">
       {/* A팀 프레임 */}
@@ -153,7 +182,7 @@ function TestOverlay() {
         </div>
         <div className="main_video_box">
           <div className="main_video_frame" id="main_screen">
-            <ItemTwoDecal className="Video_myturn" videoRef={videoRef} />
+            <ItemOneBlur className="Video_myturn" videoRef={videoRef} />
           </div>
         </div>
         <div>
@@ -162,10 +191,9 @@ function TestOverlay() {
               <button onClick={() => startOrStop()}>
                 {playing ? "Stop" : "Start"}
               </button>
-              <Button color="warning" onClick={() => startOrStop_2()}>
-                이거는 좌우반전 play 1{" "}
-              </Button>
-              <Button>좌좌화면</Button>
+              <Button onClick={renderCam}>blur</Button>
+              <Button onClick={renderCam2}>좌좌우우</Button>
+              <Button onClick={renderCam3}>퍼즐(4)</Button>
             </div>
           </div>
         </div>
