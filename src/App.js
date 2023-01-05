@@ -144,6 +144,15 @@ function TestOverlay() {
       document.getElementById("main_screen")
     );
   };
+  const renderCam4 = () => {
+    const clearElement = () => {
+      document.getElementById("my-element").innerHTML = "";
+    };
+    ReactDOM.render(
+      <canvas ref={canvasRef} autoPlay className="Video_myturn" />,
+      document.getElementById("main_screen")
+    );
+  };
   return (
     <div className="wide-frame">
       {/* A팀 프레임 */}
@@ -178,19 +187,21 @@ function TestOverlay() {
       {/* 중앙 freame */}
       <div className="mid-screen">
         <div className="team_box">
-          <div className="team_turn"></div>
+          <div className="team_turn">
+            <h1>
+              <center> Time : 43.00 Sec </center>
+            </h1>
+          </div>
         </div>
         <div className="main_video_box">
           <div className="main_video_frame" id="main_screen">
-            <ItemOneBlur className="Video_myturn" videoRef={videoRef} />
+            <canvas ref={canvasRef} autoPlay className="Video_myturn" />
           </div>
         </div>
         <div>
           <div className="team_box">
             <div className="team_turn">
-              <button onClick={() => startOrStop()}>
-                {playing ? "Stop" : "Start"}
-              </button>
+              <Button onClick={renderCam4}>원본</Button>
               <Button onClick={renderCam}>blur</Button>
               <Button onClick={renderCam2}>좌좌우우</Button>
               <Button onClick={renderCam3}>퍼즐(4)</Button>
