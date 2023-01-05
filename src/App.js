@@ -21,7 +21,7 @@ const getWebcam = (callBack) => {
 function TestOverlay() {
   const [playing, setPlaying] = useState(undefined);
   const canvasRef = useRef(null); // 상하 반전
-  
+
   const [timer, setTimer] = useState(undefined);
 
   const videoRef = useRef(null); // 좌우 반전
@@ -138,10 +138,11 @@ function TestOverlay() {
         </div>
         <div className="video_box">
           <div className="video_frame"></div>
-          
         </div>
         <div className="video_box">
-          <div className="video_frame"><ItemOneBlur className="Video_myturn" videoRef={videoRef} canvasRef={canvasRef}/> </div>
+          <div className="video_frame">
+            {/* <ItemOneBlur className="Video_myturn" videoRef={videoRef} />{" "} */}
+          </div>
         </div>
       </div>
 
@@ -151,8 +152,8 @@ function TestOverlay() {
           <div className="team_turn"></div>
         </div>
         <div className="main_video_box">
-          <div className="main_video_frame">
-            <canvas ref={canvasRef} className="Video_myturn" />
+          <div className="main_video_frame" id="main_screen">
+            <ItemTwoDecal className="Video_myturn" videoRef={videoRef} />
           </div>
         </div>
         <div>
@@ -164,6 +165,7 @@ function TestOverlay() {
               <Button color="warning" onClick={() => startOrStop_2()}>
                 이거는 좌우반전 play 1{" "}
               </Button>
+              <Button>좌좌화면</Button>
             </div>
           </div>
         </div>
@@ -181,16 +183,17 @@ function TestOverlay() {
           </div>
         </div>
         <div className="video_box">
-          <div className="video_frame"><ItemTwoDecal className="Video_myturn" videoRef={videoRef} canvasRef={canvasRef}/></div>
+          <div className="video_frame"></div>
         </div>
         <div className="video_box">
-          <div className="video_frame"><ItemThreeCut className="Video_myturn" videoRef={videoRef} canvasRef={canvasRef}/></div>
+          <div className="video_frame">
+            {/* <ItemThreeCut className="Video_myturn" videoRef={videoRef} /> */}
+          </div>
         </div>
         <div className="video_box">
           <div className="video_frame"></div>
         </div>
       </div>
-      
     </div>
   );
 }
