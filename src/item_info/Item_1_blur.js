@@ -24,7 +24,6 @@ const ItemOneBlur = ({ videoRef }) => {
       // Set the canvas dimensions to match the video
       canvasRef.current.width = videoRef.current.videoWidth;
       canvasRef.current.height = videoRef.current.videoHeight;
-      console.log("여기가 동작하나???");
       // Draw the video frame-by-frame onto the canvas
       function drawFrame() {
         // Check if the video has ended
@@ -38,7 +37,6 @@ const ItemOneBlur = ({ videoRef }) => {
           ctx.drawImage(videoRef.current, 0, 0);
           ctx.setTransform(1, 0, 0, 1, 0, 0);
           ctx.filter = "none";
-          console.log("여기 동작하고 있음???" + ctx);
           setTimeout(drawFrame, 50);
         }
       }

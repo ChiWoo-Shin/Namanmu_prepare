@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import ReactDOM from "react-dom";
 import { Button } from "react-bootstrap";
 import Main_timer from "./for_game/main_timer"; // Timer
 
-import S_words from "./for_game/S_word_answer";
+import S_words from "./for_game/S_word_answer"; //About Answers(textbox, button etc)
+
 //Item list
 import ItemOneBlur from "./item_info/Item_1_blur";
 import ItemTwoDecal from "./item_info/Item_2_decalco";
@@ -26,17 +27,19 @@ const getWebcam = (callBack) => {
 
 function App() {
   const [playing, setPlaying] = useState(undefined);
-  const canvasRef = useRef(null); // 상하 반전
+  const canvasRef = useRef(null);
 
   const [timer, setTimer] = useState(undefined);
 
-  const videoRef = useRef(null); // 좌우 반전
+  const videoRef = useRef(null);
 
   const [target, setTarget] = useState(null);
-  let state = useSelector((state) => { return state })
-  console.log(state.S_words_Q)
+  let state = useSelector((state) => {
+    return state;
+  });
+  console.log(state.S_words_Q);
   let dispatch = useDispatch();
-  let [i,setI] = useState(0);
+  let [i, setI] = useState(0);
 
   useEffect(() => {
     // Set the srcObject of the video element when the videoRef is updated
@@ -72,7 +75,6 @@ function App() {
       console.log(err);
     }
   };
-
 
   const startOrStop_2 = () => {
     if (!timer) {
